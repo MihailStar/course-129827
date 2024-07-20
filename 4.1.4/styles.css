@@ -1,0 +1,81 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+.chemistry {
+  margin: auto;
+}
+
+.chemistry td {
+  padding: 0;
+  border: 2px solid;
+}
+
+.element + .element {
+  border-top: 1px solid #a8a8a8;
+}
+
+.element td {
+  width: 120px;
+  padding: 8px 4px 7px;
+  border: 0;
+}
+
+.element .with-sub {
+  position: relative;
+}
+
+.element sub {
+  position: absolute;
+  bottom: 2px;
+}
+
+.element .horizontal-separator {
+  width: 40px;
+  border-right: 1px solid #a8a8a8;
+  border-left: 1px solid #a8a8a8;
+}
+
+.element .vertical-separator {
+  height: 40px;
+  border-top: 1px solid #a8a8a8;
+  border-bottom: 1px solid #a8a8a8;
+}
+
+.element .symbol {
+  font-size: 4rem;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.element .symbol_light {
+  color: #ff0000;
+}
+
+.element .symbol_dark {
+  color: #0000ff;
+}
+
+.element .title {
+  text-transform: uppercase;
+  border-top: 1px solid #a8a8a8;
+}
+
+.element .title_on-right {
+  text-align: right;
+}
