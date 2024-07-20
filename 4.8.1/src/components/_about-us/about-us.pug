@@ -1,0 +1,22 @@
+include ../_button/button.pug
+include ../_title/title.pug
+include ../_wrapper/wrapper.pug
+
+mixin about-us
+  section#about-us.about-us&attributes(attributes)
+    +wrapper
+      .about-us__image
+        img(
+          src="./images/about-us.jpg",
+          alt="Команда Devcloud Solutions",
+          width="714",
+          height="586"
+        )
+      .about-us__content
+        .about-us__title
+          +title
+            q Гарантируем качество <br> и выполнение в сроки
+        p.about-us__description Мы просто умеем разрабатывать то, что нужно. <br> То, что будет работать!
+        .about-us__button
+          +button.button_dark Запросить консультацию
+        p.about-us__synopsis С 2010 года профессионально разрабатываем успешные мобильные и веб-решения, индивидуальные програ ммные решения, информационные системы и ПО для бизнеса, которые повышают эффективность бизнеса.

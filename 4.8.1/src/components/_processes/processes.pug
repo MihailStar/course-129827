@@ -1,0 +1,29 @@
+include ../_more/more.pug
+include ../_title/title.pug
+include ../_wrapper/wrapper.pug
+
+mixin processes
+  section#processes.processes&attributes(attributes)
+    +wrapper
+      .processes__title
+        +title Наш процесс работы
+    +wrapper
+      .processes__nav-buttons
+        each item in [1, 2, 3, 4, 5, 6]
+          button.processes__nav-button(
+            class={ "processes__nav-button_current": item === 1 },
+            type="button",
+            aria-label=`К процессу номер ${item}`
+          )= item
+      .processes__image
+        img(
+          src="./images/processes.jpg",
+          alt="Мастерская открытий",
+          width="714",
+          height="452"
+        )
+      .processes__content
+        h3.processes__subtitle 1. Мастерская открытий
+        p.processes__description Мы придаем первостепенное значение пониманию и документированию входов, предпочтений клиентов, дизайна и брендов. И проясните все открытые моменты, чтобы получить точное и ясное представление о целях как клиентов, так и проекта. Мы работаем в рамках совместного подхода с участием заинтересованных сторон, чтобы согласовать бизнес-процессы.
+        .processes__more
+          +more('javascript:void(0);')

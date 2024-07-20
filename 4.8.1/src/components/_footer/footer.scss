@@ -1,0 +1,196 @@
+@use '../_wrapper/wrapper.scss';
+@use '../../styles/variables.scss';
+@use 'sass:math';
+
+.footer {
+  &__logotype,
+  &__contacts,
+  &__navigation,
+  &__copyright {
+    @extend %wrapper-padding;
+  }
+
+  &__logotype,
+  &__contacts,
+  &__navigation {
+    padding-top: 102px;
+    padding-bottom: 108px;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  &__logotype {
+    width: math.div(100%, math.div(12, 4));
+    color: variables.$color-dark;
+  }
+
+  &__address {
+    max-width: 59px + 18px + 229px;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: variables.$color-dark;
+    text-align: right;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+  }
+
+  &__contacts {
+    width: math.div(100%, math.div(12, 3));
+  }
+
+  &__phones {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 27px + 26px;
+    margin-bottom: 4px;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 27px;
+      height: 100%;
+      content: '';
+      background: url('../images/phone.png') no-repeat center;
+    }
+  }
+
+  &__email {
+    padding-left: 26px + 8px;
+    margin-bottom: 10px;
+    background: url('../images/email.png') no-repeat left center;
+  }
+
+  &__messengers {
+    display: flex;
+  }
+
+  &__messenger {
+    padding-left: 24px + 10px;
+    background: no-repeat left center;
+
+    &:not(:last-child) {
+      margin-right: 22px;
+    }
+
+    &_whatsapp {
+      background-image: url('../images/whatsapp.svg');
+    }
+
+    &_telegram {
+      background-image: url('../images/telegram.svg');
+    }
+  }
+
+  &__navigation {
+    display: flex;
+    flex-direction: column;
+    row-gap: 18px;
+    align-items: flex-start;
+    width: math.div(100%, math.div(12, 2));
+  }
+
+  &__link {
+    font-size: 18px;
+    font-weight: 300;
+    color: variables.$color-dark;
+    text-decoration: none;
+    letter-spacing: 0.07em;
+    outline: 1px solid transparent;
+    outline-offset: 2px;
+    transition:
+      color 300ms,
+      outline-color 300ms;
+
+    &:hover {
+      color: variables.$color-accent;
+    }
+
+    &:focus-visible {
+      outline-color: variables.$color-accent;
+    }
+
+    &_phone,
+    &_email,
+    &_whatsapp,
+    &_telegram {
+      line-height: 1.7;
+      text-transform: uppercase;
+    }
+
+    &_whatsapp,
+    &_telegram {
+      font-size: 13px;
+      letter-spacing: 0.03em;
+    }
+
+    &_email {
+      display: inline-block;
+    }
+
+    &_navigation {
+      line-height: 1.8;
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 102px;
+    right: math.div(wrapper.$gap-width, 2);
+    display: block;
+    width: 34px;
+    height: 57px;
+    color: variables.$color-dark;
+    text-decoration: none;
+    outline: 1px solid transparent;
+    outline-offset: 2px;
+    transition:
+      color 300ms,
+      outline-color 300ms;
+
+    &:hover {
+      color: variables.$color-accent;
+    }
+
+    &:focus-visible {
+      outline-color: variables.$color-accent;
+    }
+
+    svg {
+      width: 34px;
+      height: 57px;
+      vertical-align: middle;
+    }
+  }
+
+  &__delimiter,
+  &__copyright {
+    width: 100%;
+  }
+
+  &__delimiter {
+    max-width: 94px * 12 + 30px * (11 + 2);
+    height: 1px;
+    margin-top: 0;
+    margin-right: auto;
+    margin-bottom: 0;
+    margin-left: auto;
+    background-color: #bdbdbd;
+    border: 0;
+  }
+
+  &__copyright {
+    margin-top: 38px;
+    margin-bottom: 56px;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #bdbdbd;
+    text-align: right;
+  }
+}

@@ -1,0 +1,47 @@
+include ../_button/button.pug
+include ../_more/more.pug
+include ../_title/title.pug
+include ../_wrapper/wrapper.pug
+
+mixin projects
+  section#projects.projects&attributes(attributes)
+    +wrapper
+      .projects__title
+        +title Наши проекты
+    +wrapper
+      .projects__image
+        img(
+          src="./images/projects.jpg",
+          alt="Компания по производству фотокниг Fototeca",
+          width="590",
+          height="460"
+        )
+      .projects__content
+        h3.projects__subtitle Компания по производству фотокниг Fototeca
+        p.projects__description Программное решение, автоматизирующее производство изделий – от создания дизайна до выдачи клиенту. Была создана система, которая позволяет профессиональному фотографу – клиенту компании — формировать изделие (фотокнигу) в нужном формате и виде, оплатить и сразу передать заказ в производство.
+        .projects__more
+          +more('javascript:void(0);')
+      .projects__nav-buttons
+        button.projects__nav-button.projects__nav-button_to-previous(
+          type="button",
+          aria-label="К предыдущему проекту"
+        )
+          svg(
+            viewBox="0 0 14 26",
+            fill="none",
+            xmlns="http://www.w3.org/2000/svg"
+          )
+            path(d="M13 25L1 13L13 0.999999", stroke="currentColor")
+        button.projects__nav-button.projects__nav-button_to-next(
+          type="button",
+          aria-label="К следующему проекту"
+        )
+          svg(
+            viewBox="0 0 14 26",
+            fill="none",
+            xmlns="http://www.w3.org/2000/svg"
+          )
+            path(d="M1 1L13 13L1 25", stroke="currentColor")
+    +wrapper
+      .projects__button
+        +button.button_dark Посмотреть все проекты

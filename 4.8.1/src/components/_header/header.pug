@@ -1,0 +1,11 @@
+include ../_logotype/logotype.pug
+include ../_navigation/navigation.pug
+include ../_wrapper/wrapper.pug
+
+mixin header
+  header.header&attributes(attributes)
+    +wrapper
+      .header__logotype
+        +logotype
+      .header__navigation
+        +navigation

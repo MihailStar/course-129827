@@ -1,0 +1,41 @@
+extends ./templates/main.pug
+
+block variables
+  -
+    const pageClass = 'devcloud-solutions';
+    const pageTitle = '4.8.1 | Devcloud Solutions';
+
+    const documentLanguage = void 0;
+    const isVisibleForRobots = false;
+    const pageDescription = void 0;
+    const pageKeyword = void 0;
+
+block head
+  link(href="https://fonts.googleapis.com", rel="preconnect")
+  link(href="https://fonts.gstatic.com", rel="preconnect", crossorigin)
+  link(
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&display=swap",
+    rel="stylesheet"
+  )
+
+block body
+  .devcloud-solutions__header
+    +header
+  .devcloud-solutions__hero
+    +hero
+  .devcloud-solutions__digits
+    +digits
+  .devcloud-solutions__about-us
+    +about-us
+  .devcloud-solutions__services
+    +services
+  .devcloud-solutions__projects
+    +projects
+  .devcloud-solutions__processes
+    +processes
+  .devcloud-solutions__tools
+    +tools
+  .devcloud-solutions__feedback
+    +feedback
+  .devcloud-solutions__footer
+    +footer

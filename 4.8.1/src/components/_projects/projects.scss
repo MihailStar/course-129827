@@ -1,0 +1,124 @@
+@use '../_button/button.scss';
+@use '../_more/more.scss';
+@use '../_title/title.scss';
+@use '../_wrapper/wrapper.scss';
+@use '../../styles/variables.scss';
+@use 'sass:math';
+
+.projects {
+  &__title,
+  &__image,
+  &__content,
+  &__nav-buttons,
+  &__button {
+    @extend %wrapper-padding;
+  }
+
+  &__title {
+    width: 100%;
+    margin-bottom: 130px;
+  }
+
+  &__image {
+    width: math.div(100%, math.div(12, 5));
+    margin-left: math.div(100%, math.div(12, 1));
+
+    img {
+      max-width: 100%;
+      height: auto;
+      vertical-align: middle;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: math.div(100%, math.div(12, 6));
+    padding-top: 15px - 8px;
+    padding-bottom: 15px;
+  }
+
+  &__subtitle {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 32px;
+    font-weight: 400;
+    color: variables.$color-dark;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  &__description {
+    max-width: math.div(94px * 5 + 30 * 4, 94px * 6 + 30 * 5) * 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 18px;
+    font-weight: 400;
+    color: variables.$color-dark;
+    letter-spacing: 0.01em;
+  }
+
+  &__more {
+    max-width: math.div(94px * 3 + 30 * 2, 94px * 6 + 30 * 5) * 100%;
+  }
+
+  &__nav-buttons {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    pointer-events: none;
+    transform: translateY(-50%);
+  }
+
+  &__nav-button {
+    padding-top: 7px;
+    padding-right: 13px;
+    padding-bottom: 7px;
+    padding-left: 13px;
+    line-height: inherit;
+    color: variables.$color-dark;
+    vertical-align: middle;
+    pointer-events: auto;
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+    outline: 1px solid transparent;
+    outline-offset: 2px;
+    transition: color 300ms;
+    transition:
+      color 300ms,
+      outline-color 300ms;
+
+    &:hover {
+      color: variables.$color-accent;
+    }
+
+    &:focus-visible {
+      outline-color: variables.$color-accent;
+    }
+
+    &_to-previous {
+      margin-left: 40px;
+    }
+
+    &_to-next {
+      margin-right: 40px;
+    }
+
+    svg {
+      width: 14px;
+      height: 26px;
+      vertical-align: middle;
+    }
+  }
+
+  &__button {
+    width: 100%;
+    margin-top: 68px;
+    text-align: center;
+  }
+}

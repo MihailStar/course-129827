@@ -1,0 +1,104 @@
+@use '../_more/more.scss';
+@use '../_title/title.scss';
+@use '../_wrapper/wrapper.scss';
+@use '../../styles/variables.scss';
+@use 'sass:math';
+
+.processes {
+  &__title,
+  &__nav-buttons,
+  &__image,
+  &__content {
+    @extend %wrapper-padding;
+  }
+
+  &__title {
+    width: 100%;
+    margin-bottom: 130px;
+  }
+
+  &__nav-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: math.div(100%, math.div(12, 1));
+  }
+
+  &__nav-button {
+    width: 100%;
+    aspect-ratio: 94 / 56;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: inherit;
+    color: variables.$color-dark;
+    letter-spacing: 0.01em;
+    vertical-align: middle;
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid;
+    outline: 1px solid transparent;
+    outline-offset: 2px;
+    transition:
+      color 300ms,
+      outline-color 300ms;
+
+    &:hover {
+      color: variables.$color-accent;
+    }
+
+    &:focus-visible {
+      outline-color: variables.$color-accent;
+    }
+
+    &_current {
+      color: variables.$color-accent;
+    }
+  }
+
+  &__image {
+    width: math.div(100%, math.div(12, 6));
+
+    img {
+      max-width: 100%;
+      height: auto;
+      vertical-align: middle;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: math.div(100%, math.div(12, 5));
+    padding-top: 15px - 8px;
+    padding-bottom: 15px;
+  }
+
+  &__subtitle {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 32px;
+    font-weight: 400;
+    color: variables.$color-dark;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  &__description {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 18px;
+    font-weight: 400;
+    color: variables.$color-dark;
+    letter-spacing: 0.01em;
+  }
+
+  &__more {
+    max-width: math.div(94px * 3 + 30 * 2, 94px * 5 + 30 * 4) * 100%;
+  }
+}

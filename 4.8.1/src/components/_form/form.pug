@@ -1,0 +1,19 @@
+mixin form
+  form.form&attributes(attributes)
+    h3.form__subtitle Есть вопросы? Задавайте!
+    input.form__input(type="text", placeholder="Имя")
+    .form__inputs
+      input.form__input(type="email", placeholder="E-mail")
+      input.form__input(type="tel", placeholder="Телефон")
+    .form__textarea-wrapper
+      textarea.form__textarea(placeholder="Напишите свое сообщение...")
+      input#submit-button.form__button.visually-hidden(type="submit")
+      label.form__label.form__label_for-submit-button(
+        for="submit-button",
+        aria-label="Отправить"
+      )
+      input#file-button.form__button.visually-hidden(type="file")
+      label.form__label.form__label_for-file-button(
+        for="file-button",
+        aria-label="Прикрепить файл"
+      )

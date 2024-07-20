@@ -1,0 +1,45 @@
+@use '../_wrapper/wrapper.scss';
+@use '../../styles/variables.scss';
+@use 'sass:math';
+
+.title {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 40px;
+  font-weight: 700;
+  color: variables.$color-dark;
+  text-align: center;
+  letter-spacing: 0.04em;
+
+  &:has(q) {
+    position: relative;
+
+    &::before,
+    &::after {
+      position: absolute;
+      width: math.div(60px, 94px * 6 + wrapper.$gap-width * 5) * 100%;
+      aspect-ratio: 1 / 1;
+      content: '';
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    &::before {
+      bottom: 0;
+      left: 0;
+      background-image: url('../images/q-left.png');
+      transform: translate(-6px, 8px);
+    }
+
+    &::after {
+      top: 0;
+      right: 0;
+      background-image: url('../images/q-right.png');
+      transform: translate(6px, -8px);
+    }
+
+    q {
+      quotes: none;
+    }
+  }
+}

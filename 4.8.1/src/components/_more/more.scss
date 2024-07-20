@@ -1,0 +1,38 @@
+@use '../../styles/variables.scss';
+
+.more {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: variables.$color-dark;
+  text-decoration: none;
+  outline: 1px solid transparent;
+  outline-offset: 2px;
+  transition: color 300ms;
+  transition:
+    color 300ms,
+    outline-color 300ms;
+
+  &:hover {
+    color: variables.$color-accent;
+  }
+
+  &:focus-visible {
+    outline-color: variables.$color-accent;
+  }
+
+  &__icon,
+  &__arrow {
+    vertical-align: middle;
+  }
+
+  &__icon {
+    width: 39px;
+    height: 31px;
+  }
+
+  &__arrow {
+    width: 43px;
+    height: 12px;
+  }
+}

@@ -1,0 +1,19 @@
+include ../_wrapper/wrapper.pug
+
+mixin digits
+  -
+    const items = [
+      { title: '98%', description: 'завершенных проектов успешно' },
+      { title: '30', description: 'календарных дней до <br> первого релиза' },
+      { title: '5+', description: 'дней от идеи до <br> готовой концепции' },
+      { title: '+20%', description: 'к эффективности бизнеса' },
+    ];
+
+  section#digits.digits&attributes(attributes)
+    +wrapper
+      h2.digits__title.visually-hidden В цифрах
+      ul.digits__list
+        each item in items
+          li.digits__item
+            strong= item.title
+            span!= item.description

@@ -1,0 +1,38 @@
+include ../_card/card.pug
+include ../_title/title.pug
+include ../_wrapper/wrapper.pug
+
+mixin services
+  -
+    const items = [
+      {
+        title: 'Разработка мобильных приложений',
+        description: 'Мы создаем мобильные приложения, которые нравятся пользователям. Воспользовавшись преимуществами искусственного интеллекта, машинного обучения, Интернета вещей и других высокотехнологичных технологий для создания шедевров приложений, которые сохранятся.',
+        href: '#',
+        modifier: 'mobile',
+      },
+      {
+        title: 'Разработка программного обеспечения',
+        description: 'Уже более 10 лет мы освоили лучшие веб-технологии для реализации проектов, в которые вложены инвестиции. Надежный лидер рынка в разработке высокопроизводительных веб-интерфейсов для любого бизнеса.',
+        href: '#',
+        modifier: 'software',
+      },
+      {
+        title: 'Разработка веб приложений',
+        description: 'Мы не только идем в ногу с «тенденциями дизайна», но и ориентируемся на пользователей, что делает наши услуги наиболее эффективными на всем рынке. Превосходство с 2010 года. Создадим идеальное веб приложение именно для вас.',
+        href: '#',
+        modifier: 'web',
+      },
+    ];
+
+  section#services.services&attributes(attributes)
+    +wrapper
+      .services__title
+        +title Основные услуги
+    +wrapper
+      .services__cards
+        each item in items
+          .services__card
+            +card(item.title, item.description, item.href)(
+              class={ [`card_${item.modifier}`]: typeof item.modifier === "string" }
+            )

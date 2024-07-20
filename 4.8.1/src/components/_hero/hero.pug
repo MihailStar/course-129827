@@ -1,0 +1,19 @@
+include ../_button/button.pug
+include ../_wrapper/wrapper.pug
+
+mixin hero
+  #home.hero&attributes(attributes)
+    .hero__background
+    .hero__overlay
+    +wrapper
+      .hero__content
+        h1.hero__title Компания по разработке программного обеспечения
+        .hero__button
+          +button.button_light Запросить консультацию
+        a.hero__arrow(href="#digits", aria-label="К следующему разделу")
+          svg(viewBox="0 0 42 72", xmlns="http://www.w3.org/2000/svg")
+            path(
+              d="M21 -18V71M21 71L1 44.6296M21 71L41 44.6296",
+              stroke="currentColor",
+              stroke-width="2"
+            )

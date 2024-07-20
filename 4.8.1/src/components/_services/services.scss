@@ -1,0 +1,37 @@
+@use '../_card/card.scss';
+@use '../_title/title.scss';
+@use '../_wrapper/wrapper.scss';
+@use '../../styles/variables.scss';
+@use 'sass:math';
+
+.services {
+  &__title,
+  &__cards {
+    @extend %wrapper-padding;
+    width: 100%;
+  }
+
+  &__title {
+    margin-bottom: 130px;
+  }
+
+  &__cards {
+    display: flex;
+    column-gap: wrapper.$gap-width;
+    justify-content: space-between;
+    width: math.div(
+        94px * 10 + wrapper.$gap-width * 10,
+        94px * 12 + wrapper.$gap-width * 12
+      ) * 100%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 6px;
+    outline: 1px dashed variables.$color-accent;
+  }
+
+  &__card {
+    width: 94px * 3 + wrapper.$gap-width * 2;
+  }
+}

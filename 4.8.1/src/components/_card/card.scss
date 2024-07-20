@@ -1,0 +1,86 @@
+@use '../_more/more.scss';
+@use '../../styles/variables.scss';
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-top: 108px;
+  padding-right: 44px;
+  padding-bottom: 70px;
+  padding-left: 52px;
+  overflow-x: hidden;
+  border-radius: 26px;
+  box-shadow: 0 3px 11px 0 #9898988f;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    content: '';
+    border-color: transparent variables.$color-accent transparent transparent;
+    border-style: solid;
+    border-width: 0 160px 160px 0;
+  }
+
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 160px;
+    height: 160px;
+    pointer-events: none;
+    content: '';
+    background-repeat: no-repeat;
+  }
+
+  &_mobile {
+    &::after {
+      background-image: url('../images/mobile.png');
+      background-position: top 17px right 17px;
+    }
+  }
+
+  &_software {
+    &::after {
+      background-image: url('../images/software.png');
+      background-position: top 22px right 11px;
+    }
+  }
+
+  &_web {
+    &::after {
+      background-image: url('../images/web.png');
+      background-position: top 27px right 22px;
+    }
+  }
+
+  &__title {
+    min-height: 20px * 1.4 * 3;
+    margin-top: 0;
+    margin-bottom: 50px;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: variables.$color-dark;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+  }
+
+  &__description {
+    margin-top: 0;
+    margin-bottom: 34px;
+    font-size: 14px;
+    font-weight: 300;
+    color: variables.$color-dark;
+    letter-spacing: -0.01em;
+  }
+
+  &__more {
+    margin-top: auto;
+  }
+}

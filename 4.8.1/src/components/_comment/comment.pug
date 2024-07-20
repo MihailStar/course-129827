@@ -1,0 +1,11 @@
+mixin comment(fileName, title, description, text, rating, date)
+  .comment&attributes(attributes)
+    .comment__image
+      img(src=`./images/${fileName}`, alt=title, width="100", height="100")
+    h3.comment__title= title
+    p.comment__discription= description
+    blockquote.comment__text= text
+    .comment__rating(style=`--rating: ${rating};`)
+      span.visually-hidden= `Оценка ${rating}`
+    - const [fullYear, month, day] = date.split("-");
+    time.comment__date(datetime=date)= `${day}.${month}.${fullYear.slice(2)}`

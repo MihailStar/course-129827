@@ -1,0 +1,16 @@
+mixin navigation
+  -
+    const items = [
+      { title: 'Главная', href: '#home' },
+      { title: 'Услуги', href: '#services' },
+      { title: 'Как мы работаем', href: '#processes' },
+      { title: 'Портфолио', href: '#projects' },
+      { title: 'О нас', href: '#about-us' },
+      { title: 'Контакты', href: '#feedback' },
+    ];
+
+  nav.navigation&attributes(attributes)
+    ul.navigation__list
+      each item in items
+        li.navigation__item
+          a.navigation__link(href=`${item.href}`)= item.title

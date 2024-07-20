@@ -1,0 +1,88 @@
+@use '../../styles/utilities/visually-hidden.scss';
+@use '../../styles/variables.scss';
+
+.comment {
+  max-width: 94px * 5 + 30px * 4;
+  padding-top: 74px;
+  padding-right: 86px;
+  padding-bottom: 90px;
+  padding-left: 86px;
+
+  &__image {
+    width: 100px;
+    height: 100px;
+    margin-right: auto;
+    margin-bottom: 14px;
+    margin-left: auto;
+    overflow: hidden;
+    border-radius: 50%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      vertical-align: middle;
+      object-fit: cover;
+    }
+  }
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.8;
+    color: variables.$color-dark;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  &__discription {
+    margin-top: 0;
+    margin-bottom: 28px;
+    font-size: 18px;
+    font-weight: 300;
+    color: variables.$color-dark;
+    text-align: center;
+    letter-spacing: 0.03em;
+  }
+
+  &__text {
+    margin-top: 0;
+    margin-right: auto;
+    margin-bottom: 52px;
+    margin-left: auto;
+    font-size: 16px;
+    font-weight: 300;
+    color: #515151;
+    text-align: center;
+    letter-spacing: 0.03em;
+  }
+
+  &__rating {
+    width: calc(25px * var(--rating, 0) + 10px * (var(--rating, 0) - 1));
+    height: 25px;
+    margin-right: auto;
+    margin-bottom: 10px;
+    margin-left: auto;
+    background:
+      url('../images/star.png') no-repeat ((25px + 10px) * 0) -1px,
+      url('../images/star.png') no-repeat ((25px + 10px) * 1) -1px,
+      url('../images/star.png') no-repeat ((25px + 10px) * 2) -1px,
+      url('../images/star.png') no-repeat ((25px + 10px) * 3) -1px,
+      url('../images/star.png') no-repeat ((25px + 10px) * 4) -1px;
+
+    span {
+      @extend %visually-hidden;
+    }
+  }
+
+  &__date {
+    display: block;
+    font-size: 16px;
+    font-weight: 300;
+    color: #6c6c6c;
+    text-align: center;
+    letter-spacing: 0.03em;
+  }
+}

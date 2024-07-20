@@ -1,0 +1,24 @@
+@use '../_logotype/logotype.scss';
+@use '../_navigation/navigation.scss';
+@use '../_wrapper/wrapper.scss';
+@use '../../styles/variables.scss';
+@use 'sass:math';
+
+.header {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: rgb(variables.$color-accent, 10%);
+  backdrop-filter: blur(8px);
+
+  &__logotype,
+  &__navigation {
+    @extend %wrapper-padding;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  &__logotype {
+    margin-right: auto;
+    color: variables.$color-light;
+  }
+}

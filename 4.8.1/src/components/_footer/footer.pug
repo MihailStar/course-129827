@@ -1,0 +1,46 @@
+include ../_wrapper/wrapper.pug
+include ../_logotype/logotype.pug
+
+mixin footer
+  -
+    const items = [
+      { title: 'Главная', href: '#home' },
+      { title: 'Портфолио', href: '#projects' },
+      { title: 'Услуги', href: '#services' },
+      { title: 'Процессы', href: '#processes' },
+      { title: 'О компании', href: '#about-us' },
+      { title: 'Контакты', href: '#contacts' },
+    ];
+
+  footer.footer&attributes(attributes)
+    +wrapper
+      .footer__logotype
+        +logotype.logotype_bigger
+        p.footer__address Алматы, Жамбыла 111
+      .footer__contacts
+        .footer__phones
+          a.footer__link.footer__link_phone(href="tel:+77273342145") +7 (727) 334-21-45
+          a.footer__link.footer__link_phone(href="tel:+77079989390") +7 (707) 998-93-90
+        .footer__email
+          a.footer__link.footer__link_email(href="mailto:info@devcloud.kz") info@devcloud.kz
+        .footer__messengers
+          .footer__messenger.footer__messenger_whatsapp
+            a.footer__link.footer__link_whatsapp(href="javascript:void(0);") WhatsApp
+          .footer__messenger.footer__messenger_telegram
+            a.footer__link.footer__link_telegram(href="javascript:void(0);") Telegram
+      .footer__navigation
+        each item in items.slice(0, items.length / 2)
+          a.footer__link.footer__link_navigation(href=`${item.href}`)= item.title
+      .footer__navigation
+        each item in items.slice(items.length / 2)
+          a.footer__link.footer__link_navigation(href=`${item.href}`)= item.title
+      a.footer__arrow(href="#home", aria-label="К началу")
+        svg(viewBox="0 0 34 57", xmlns="http://www.w3.org/2000/svg")
+          path(
+            d="M17 57.3999L17 1.08562M17 1.08562L33 17.7713M17 1.08562L1 17.7713",
+            stroke="currentColor",
+            stroke-width="2"
+          )
+    hr.footer__delimiter
+    +wrapper
+      p.footer__copyright © Devcloud Solutions, Inc. 2021. We love our users!

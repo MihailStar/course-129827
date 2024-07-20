@@ -1,0 +1,22 @@
+include ../_comment/comment.pug
+include ../_form/form.pug
+include ../_wrapper/wrapper.pug
+
+mixin feedback
+  -
+    const comment = {
+      fileName: 'feedback.jpg',
+      title: 'Юрий Архипов',
+      description: 'Директор ТОО «Copyland»',
+      text: 'Разработана очень удобная система приема и обработки заказов, с ней реально высвобождается огромное количество ресурсов.',
+      rating: 5,
+      date: '2020-06-21', // ISO
+    };
+
+  section#feedback.feedback&attributes(attributes)
+    +wrapper.wrapper_full
+      h2.feedback__title.visually-hidden Обратная связь
+      .feedback__comment
+        +comment(comment.fileName, comment.title, comment.description, comment.text, comment.rating, comment.date)
+      .feedback__form
+        +form

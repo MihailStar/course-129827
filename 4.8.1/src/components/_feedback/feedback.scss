@@ -1,0 +1,34 @@
+@use '../_comment/comment.scss';
+@use '../_form/form.scss';
+@use '../_wrapper/wrapper.scss';
+@use '../../styles/variables.scss';
+@use 'sass:math';
+
+.feedback {
+  &__title {
+    @extend %visually-hidden;
+  }
+
+  &__comment,
+  &__form {
+    @extend %wrapper-padding;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__comment {
+    width: math.div(100%, math.div(12, 5));
+    background-color: rgb(variables.$color-accent, 10%);
+  }
+
+  &__form {
+    width: math.div(100%, math.div(12, 7));
+    background: linear-gradient(
+      217deg,
+      #25ba9f 0%,
+      #1b7f6d 50%,
+      #157161 73%,
+      #09463b 98%
+    );
+  }
+}

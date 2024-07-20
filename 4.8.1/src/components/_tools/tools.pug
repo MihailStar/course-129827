@@ -1,0 +1,40 @@
+include ../_wrapper/wrapper.pug
+
+mixin tools
+  -
+    const items = [
+      { fileName: 'tools-1.svg', alt: 'React.js', width: 97, height: 106 },
+      { fileName: 'tools-2.svg', alt: 'Xamarin', width: 85, height: 84 },
+      { fileName: 'tools-3.svg', alt: 'Java', width: 114, height: 114 },
+      { fileName: 'tools-4.svg', alt: 'C Sharp', width: 85, height: 85 },
+      { fileName: 'tools-5.svg', alt: 'Python', width: 104, height: 115 },
+      { fileName: 'tools-6.svg', alt: 'Swift', width: 84, height: 84 },
+      { fileName: 'tools-7.svg', alt: 'Structured Query Language', width: 88, height: 88 },
+      { fileName: 'tools-8.svg', alt: 'JavaScript', width: 90, height: 89 },
+      { fileName: 'tools-9.svg', alt: 'Файл с расширением .com', width: 95, height: 95 },
+      { fileName: 'tools-10.svg', alt: 'Vue.js', width: 97, height: 112 },
+      { fileName: 'tools-11.svg', alt: 'HyperText Markup Language', width: 98, height: 99 },
+      { fileName: 'tools-12.svg', alt: 'Cascading Style Sheets', width: 97, height: 98 },
+      { fileName: 'tools-13.svg', alt: 'Objective C', width: 105, height: 106 },
+      { fileName: 'tools-14.svg', alt: 'PostgreSQL', width: 137, height: 121 },
+      { fileName: 'tools-15.svg', alt: 'Windows Presentation Foundation', width: 121, height: 42 },
+      { fileName: 'tools-16.svg', alt: 'Oracle', width: 127, height: 128 },
+      { fileName: 'tools-17.svg', alt: 'MySQL', width: 143, height: 144 },
+    ];
+    const maxHeight = Math.max(...items.map((item) => item.height));
+
+  section#tools.tools&attributes(attributes)
+    +wrapper
+      .tools__title
+        +title Инструменты и технологии
+    +wrapper
+      ul.tools__list
+        each item in items
+          li.tools__item(style=`height: ${maxHeight}px;`)
+            .tools__image
+              img(
+                src=`./images/${item.fileName}`,
+                alt=item.alt,
+                width=item.width,
+                height=item.height
+              )

@@ -1,0 +1,56 @@
+@use '../_button/button.scss';
+@use '../_title/title.scss';
+@use '../_wrapper/wrapper.scss';
+@use '../../styles/variables.scss';
+@use 'sass:math';
+
+.about-us {
+  &__image,
+  &__content {
+    @extend %wrapper-padding;
+    width: math.div(100%, math.div(12, 6));
+  }
+
+  &__image {
+    img {
+      max-width: 100%;
+      height: auto;
+      vertical-align: middle;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding-top: 56px;
+  }
+
+  &__title {
+    margin-bottom: 68px;
+  }
+
+  &__description {
+    margin-top: 0;
+    margin-bottom: 22px;
+    font-size: 23px;
+    font-weight: 400;
+    color: variables.$color-dark;
+    text-align: center;
+    letter-spacing: 0.03em;
+  }
+
+  &__button {
+    margin-bottom: auto;
+    text-align: center;
+  }
+
+  &__synopsis {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 13px;
+    font-weight: 300;
+    color: variables.$color-dark;
+    text-align: center;
+    letter-spacing: 0.09em;
+  }
+}

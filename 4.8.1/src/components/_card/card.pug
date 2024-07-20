@@ -1,0 +1,8 @@
+include ../_more/more.pug
+
+mixin card(title, description, href)
+  article.card&attributes(attributes)
+    h3.card__title= title
+    p.card__description= description
+    .card__more
+      +more('javascript:void(0);')
